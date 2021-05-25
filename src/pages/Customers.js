@@ -26,12 +26,12 @@ export default function Customers() {
       })
   }, []);
 
-  {
-    // XS = EXTRA SMALL 
-    // SM = SMALL
-    // MD = MEDIUM
-    // LG = LARGE
-    // XL = EXTRA LARGE
+  function handleRemoveCustomer(id) {
+    axios.delete(`https://reqres.in/api/users/${id}`)
+      .then(() => {
+        const newCustomersState = customers.filter(customer => customer.id !== id);
+        setCustomers(newCustomersState);
+      })
   }
 
   return (
@@ -40,15 +40,25 @@ export default function Customers() {
         customers.map(item => (
           <Grid item xs={6} md={4} >
             <CustomerCard
+              id={item.id}
               name={item.first_name}
               lastName={item.last_name}
               email={item.email}
               avatar={item.avatar}
               className={classes.card}
+              onRemoveCustomer={handleRemoveCustomer}
             />
           </Grid>
         ))
       }
     </Grid>
   );
+}
+
+{
+  // XS = EXTRA SMALL 
+  // SM = SMALL
+  // MD = MEDIUM
+  // LG = LARGE
+  // XL = EXTRA LARGE
 }
