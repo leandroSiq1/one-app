@@ -16,9 +16,6 @@ const theme = createMuiTheme({
       main: deepPurple[500]
     },
   },
-  status: {
-    info: "#111",
-  }
 });
 
 ReactDOM.render(
