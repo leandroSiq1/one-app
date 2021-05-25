@@ -41,7 +41,7 @@ export default function Customers() {
           <Grid item xs={6} md={4} >
             <CustomerCard
               name={item.first_name}
-              lastname={item.last_name}
+              lastName={item.last_name}
               email={item.email}
               avatar={item.avatar}
               className={classes.card}

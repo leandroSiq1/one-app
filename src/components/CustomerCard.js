@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CustomerCard({ 
   name, 
-  lastname, 
+  lastName, 
   email, 
   avatar,
   className 
@@ -30,7 +30,7 @@ export default function CustomerCard({
             L
           </Avatar>
         }
-        title={`${name} ${lastname}`}
+        title={`${name} ${lastName}`}
         subheader={email}
       />
       <CardActions disableSpacing>
