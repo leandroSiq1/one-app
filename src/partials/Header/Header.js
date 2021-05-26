@@ -67,7 +67,7 @@ export default function Header({ title }) {
           </ListItem>
 
 
-          <ListItem button onClick={() => handleMenuClick('/customers')}>
+          <ListItem button onClick={() => handleMenuClick('/customers/add')}>
             <ListItemIcon>
               <PersonAddIcon />
             </ListItemIcon>

@@ -10,9 +10,9 @@ export default function Page({ title, Component }) {
 
   return (
     <>
-    <Typography variant="h3" color="secondary">
-      {title}
-    </Typography>
+      <Typography variant="h3" color="secondary">
+        {title}
+      </Typography>
       <Component />
     </>
   );
