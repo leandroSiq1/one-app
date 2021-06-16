@@ -7,30 +7,35 @@ import {
   
 import TemplateDefault from './templates/Default';
 import TemplatePage from './templates/Page';
+import TemplateClean from './templates/Clean';
 
 import Customers from './pages/customers/List';
 import CustomersRegister from './pages/customers/Register';
+import Login from './pages/Login';
 import Home from './pages/Home ';
 
 export default function App() { 
   return (
     <Router>
-      <TemplateDefault>
         <Switch>
-          <Route path="/customers/add">
-            <TemplatePage title="Cadastro de Clientes" Component={CustomersRegister}/>
+          <Route path="/login">
+            <TemplateClean title="Acesso Restrito" Component={Login} />
           </Route>
 
-          <Route path="/customers">
-            <TemplatePage title="Lista de Clientes" Component={Customers}/>
-          </Route>
+          <TemplateDefault>
+            <Route path="/customers/add">
+              <TemplatePage title="Cadastro de Clientes" Component={CustomersRegister}/>
+            </Route>
 
-          <Route path="/">
-            <TemplatePage title="Página Inicial" Component={Home}/>
-          </Route>
-          
+            <Route path="/customers">
+              <TemplatePage title="Lista de Clientes" Component={Customers}/>
+            </Route>
+
+            <Route path="/">
+              <TemplatePage title="Página Inicial" Component={Home}/>
+            </Route>
+          </TemplateDefault>
         </Switch>
-      </TemplateDefault>
     </Router>
   );
 }
